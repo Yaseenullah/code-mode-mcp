@@ -1,0 +1,8 @@
+{
+  "name": "code-mode-executor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "isolated-vm": "^5.0.1"
+  }
+}

@@ -1,0 +1,63 @@
+
+# ==========================================
+# Node.js (executor)
+# ==========================================
+executor/node_modules/
+executor/npm-debug.log*
+
+# ==========================================
+# Python (server)
+# ==========================================
+server/__pycache__/
+server/.venv/
+server/venv/
+server/*.pyc
+server/.pytest_cache/
+server/.mypy_cache/
+
+# ==========================================
+# Rust (supervisor)
+# ==========================================
+supervisor/target/
+# Keep Cargo.lock committed for reproducible builds
+
+# ==========================================
+# Environment variables and secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+secrets/
+credentials/
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
+
+# ==========================================
+# IDE
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========================================
+# OS files
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Temporary files
+# ==========================================
+*.tmp
+*.bak
+temp/
+tmp/

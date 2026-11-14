@@ -1,0 +1,21 @@
+
+# Git files
+.git
+.gitignore
+
+# Python
+.venv
+venv
+**/__pycache__
+*.pyc
+*.pyo
+
+# Node.js
+**/node_modules
+
+# Rust build artifacts
+**/target
+
+# Environment files and secrets
+.env
+.env.*
