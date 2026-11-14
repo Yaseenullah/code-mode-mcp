@@ -173,26 +173,19 @@ fn sandbox_child(use_ns: bool, prog: &BpfProgram) -> io::Result<()> {
                 return Err(io::Error::last_os_error());
             }
             
-    return Err(err);
+    eprintln!("[sandbox] namespaces created successfully");
 }
 
-eprintln!("[sandbox] namespaces created successfully");
-        }
 
         rlim!(libc::RLIMIT_CORE, 0);
         rlim!(libc::RLIMIT_NOFILE, 512);
         rlim!(libc::RLIMIT_FSIZE, 1_048_576);
         eprintln!("[sandbox] resource limits applied");
     }
-    seccompiler::apply_filter(prog).map_err(|e| io::Error::new(io::ErrorKind::Other, e.to_string()))
+    seccompiler::apply_filter(prog).map_err(|e| io::Error::new(io::ErrorKind::Other, e.to_string()))?;
     eprintln!("[sandbox] applying seccomp filter");
 
-seccompiler::apply_filter(prog)
-    .map_err(|e| io::Error::new(io::ErrorKind::Other, e.to_string()))?;
-
-eprintln!("[sandbox] seccomp filter applied successfully");
-
-Ok(())
+    Ok(())
 }
 
 
